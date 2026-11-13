@@ -1,0 +1,17 @@
+version: 1
+target:
+  id: TARGET-001
+  name: ""
+  authorization_source: ""
+  scope_confirmed: false
+assets:
+  - id: ASSET-001
+    identifier: ""
+    type: web
+    ownership_evidence: []
+    business_role: ""
+    signals: []
+    priority_reason: ""
+    state: new
+    next_action: ""
+

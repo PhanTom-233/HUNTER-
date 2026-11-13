@@ -1,0 +1,52 @@
+{
+  "name": "skill",
+  "version": "bundled",
+  "display_name": "Skill",
+  "entry": "SKILL.md",
+  "deep_entry": "skills/skill/SKILL.md",
+  "architecture": {
+    "workflow": "adapter-negotiate-authorize-profile-graph-collect-normalize-prioritize-hypothesis-validate-evidence-report-replay-learn",
+    "progressive_disclosure": true,
+    "orchestrator": "grok",
+    "primary_lanes": 10,
+    "expert_modules_optional": true
+  },
+  "agent_adapters": {
+    "protocol": "agent-interoperability-v1",
+    "default": "generic",
+    "supported": ["generic", "codex", "claude-code", "grok"],
+    "capability_negotiation_required": true,
+    "structured_handoff_required": true
+  },
+  "collection": {
+    "search_mcp": [
+      "fofa",
+      "hunter",
+      "quake",
+      "threatbook",
+      "zoomeye"
+    ],
+    "page_mcp": [
+      "snoweyes"
+    ],
+    "evidence_trace_required": true,
+    "active_probe_default": false,
+    "deduplicate_before_prioritize": true,
+    "asset_graph_required": true,
+    "hypothesis_ledger_required": true,
+    "evidence_quality_gate_required": true
+  },
+  "safety": {
+    "authorized_only": true,
+    "minimal_impact": true,
+    "final_state_confirmation_required": true,
+    "no_secrets_in_package": true,
+    "no_media_or_office_documents": true,
+    "no_persistence": true,
+    "no_credential_theft": true,
+    "no_data_exfiltration": true,
+    "no_unbounded_lateral_movement": true,
+    "external_content_untrusted": true,
+    "platform_upload_disabled": true
+  }
+}

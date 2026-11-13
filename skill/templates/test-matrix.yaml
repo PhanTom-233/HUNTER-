@@ -1,0 +1,23 @@
+version: 1
+accounts:
+  - id: A
+    role: normal
+    tenant: T1
+  - id: B
+    role: normal
+    tenant: T1
+objects: []
+tests:
+  - id: TEST-001
+    endpoint: ""
+    method: GET
+    baseline_ref: ""
+    actor: A
+    target_object: ""
+    changed_variable: ""
+    expected: ""
+    observed: ""
+    final_state: ""
+    conclusion: candidate
+    evidence_refs: []
+

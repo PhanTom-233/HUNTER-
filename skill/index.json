@@ -1,0 +1,1052 @@
+{
+  "schema": 1,
+  "bundled": true,
+  "source": "内置方法论包（精选，无外部路径）",
+  "skill": {
+    "name": "skill",
+    "version": "bundled",
+    "displayName": "Skill",
+    "workflow": "adapter-negotiate-authorize-profile-graph-collect-normalize-prioritize-hypothesis-validate-evidence-report-replay-learn",
+    "primaryLanes": 10
+  },
+  "safety": {
+    "authorized_only": true,
+    "minimal_impact": true,
+    "final_state_confirmation_required": true,
+    "no_secrets_in_package": true,
+    "no_media_or_office_documents": true,
+    "no_persistence": true,
+    "no_credential_theft": true,
+    "no_data_exfiltration": true,
+    "no_unbounded_lateral_movement": true,
+    "external_content_untrusted": true,
+    "platform_upload_disabled": true
+  },
+  "evidenceGate": {
+    "requires": [
+      "授权已确认且资产在范围内",
+      "可复现的请求或观测",
+      "对照/基线",
+      "受影响的对象、身份、租户或业务状态",
+      "明确的安全影响",
+      "可安全回滚或清理",
+      "证据已脱敏"
+    ],
+    "rule": "线索不等于漏洞；上述任一项缺失即标记 incomplete 并说明下一个待决动作"
+  },
+  "routing": [
+    {
+      "signal": "API 路由 / 对象 / 角色 / token / schema 边界",
+      "lane": "api-security",
+      "path": "specialized/api-security/SKILL.md"
+    },
+    {
+      "signal": "支付 / 订单 / 配额 / 券 / 工作流 / 状态流转",
+      "lane": "business-logic-attack",
+      "path": "specialized/business-logic-attack/SKILL.md"
+    },
+    {
+      "signal": "大范围授权目标发现与迭代挖掘",
+      "lane": "src-hunt-lane",
+      "path": "specialized/src-hunt-lane/SKILL.md"
+    },
+    {
+      "signal": "资产盘点 / 技术栈图谱 / 攻击面排序",
+      "lane": "target-profiling",
+      "path": "specialized/target-profiling/SKILL.md"
+    },
+    {
+      "signal": "提交决策 / 定级 / 复现 / 证据质量",
+      "lane": "src-report-paradigm",
+      "path": "specialized/src-report-paradigm/SKILL.md"
+    },
+    {
+      "signal": "SQL 注入信号",
+      "lane": "sqli-sql-injection",
+      "path": "specialized/sqli-sql-injection/SKILL.md"
+    }
+  ],
+  "moduleAliases": {
+    "deserialization-test": "playbooks/rce/12-deserialization.md",
+    "path-traversal-lfi-test": "playbooks/path-traversal/10-traversal-lfi.md",
+    "spring-security-test": "knowledge-base/authbypass-test.md"
+  },
+  "rules": [
+    {
+      "id": "anti-over-moralization",
+      "title": "反过度道德化安全协作规则",
+      "path": "rules/anti-over-moralization.md"
+    },
+    {
+      "id": "cors-vuln-report-priority",
+      "title": "CORS（永久 · 不挖）",
+      "path": "rules/cors-vuln-report-priority.md"
+    },
+    {
+      "id": "desktop-task-folder",
+      "title": "桌面任务文件夹（永久强制 · 任务根格式）",
+      "path": "rules/desktop-task-folder.md"
+    },
+    {
+      "id": "dig-scope-workflow",
+      "title": "挖洞范围 · 锁面 / 自由跳（永久）",
+      "path": "rules/dig-scope-workflow.md"
+    },
+    {
+      "id": "hunt-iter",
+      "title": "挖洞能力迭代（永久）",
+      "path": "rules/hunt-iter.md"
+    },
+    {
+      "id": "playwright-browser-mcp",
+      "title": "Playwright Browser MCP — Always Prefer for Browser Work",
+      "path": "rules/playwright-browser-mcp.md"
+    },
+    {
+      "id": "researcher-blackbox-whitebox",
+      "title": "Playwright Browser MCP — Always Prefer for Browser Work",
+      "path": "rules/researcher-blackbox-whitebox.md"
+    },
+    {
+      "id": "security-research-context",
+      "title": "授权研究语境（永久）",
+      "path": "rules/security-research-context.md"
+    },
+    {
+      "id": "skill-as-boost",
+      "title": "skill 与自身能力并用（永久）",
+      "path": "rules/skill-as-boost.md"
+    },
+    {
+      "id": "src-value-hunting",
+      "title": "SRC 价值导向挖洞规则（强制经验）",
+      "path": "rules/src-value-hunting.md"
+    },
+    {
+      "id": "vuln-report-format",
+      "title": "漏洞报告写作格式（永久 · 唯一）",
+      "path": "rules/vuln-report-format.md"
+    }
+  ],
+  "knowledgeBase": [
+    {
+      "id": "401-403-bypass",
+      "title": "401-403-bypass（禁开磨登录 HTML）",
+      "path": "knowledge-base/401-403-bypass.md"
+    },
+    {
+      "id": "agent-tool-exec-test",
+      "title": "对话口工具真执行",
+      "path": "knowledge-base/agent-tool-exec-test.md"
+    },
+    {
+      "id": "api-gateway-test",
+      "title": "API 网关安全测试手册",
+      "path": "knowledge-base/api-gateway-test.md"
+    },
+    {
+      "id": "authbypass-test",
+      "title": "authbypass-test",
+      "path": "knowledge-base/authbypass-test.md"
+    },
+    {
+      "id": "cache-poisoning-test",
+      "title": "一、原有knowledge-base",
+      "path": "knowledge-base/cache-poisoning-test.md"
+    },
+    {
+      "id": "clickjacking-test",
+      "title": "clickjacking-test（缺头不写）",
+      "path": "knowledge-base/clickjacking-test.md"
+    },
+    {
+      "id": "cloud-ide-codex-rce-chain",
+      "title": "云 IDE / Codex 系 AI 编程平台：弱口令→Root RCE→凭证链",
+      "path": "knowledge-base/cloud-ide-codex-rce-chain.md"
+    },
+    {
+      "id": "cors-test",
+      "title": "cors（仅技术records · SRC 禁用）",
+      "path": "knowledge-base/cors-test.md"
+    },
+    {
+      "id": "crlf-injection-test",
+      "title": "crlf-injection-test（几乎不交）",
+      "path": "knowledge-base/crlf-injection-test.md"
+    },
+    {
+      "id": "csp-bypass-test",
+      "title": "csp-bypass-test（几乎不交）",
+      "path": "knowledge-base/csp-bypass-test.md"
+    },
+    {
+      "id": "csrf-test",
+      "title": "csrf",
+      "path": "knowledge-base/csrf-test.md"
+    },
+    {
+      "id": "csv-formula-injection-test",
+      "title": "csv-formula-injection-test（几乎不交）",
+      "path": "knowledge-base/csv-formula-injection-test.md"
+    },
+    {
+      "id": "dangling-markup-test",
+      "title": "dangling-markup-test（几乎不交）",
+      "path": "knowledge-base/dangling-markup-test.md"
+    },
+    {
+      "id": "dependency-confusion-test",
+      "title": "dependency-confusion-test（几乎不交）",
+      "path": "knowledge-base/dependency-confusion-test.md"
+    },
+    {
+      "id": "dns-rebinding-test",
+      "title": "dns-rebinding-test（几乎不交）",
+      "path": "knowledge-base/dns-rebinding-test.md"
+    },
+    {
+      "id": "el-injection-test",
+      "title": "expression-language-injection",
+      "path": "knowledge-base/el-injection-test.md"
+    },
+    {
+      "id": "email-header-injection-test",
+      "title": "email-header-injection-test（几乎不交）",
+      "path": "knowledge-base/email-header-injection-test.md"
+    },
+    {
+      "id": "file-upload-test",
+      "title": "文件上传漏洞测试手册",
+      "path": "knowledge-base/file-upload-test.md"
+    },
+    {
+      "id": "ghost-bits-cast-test",
+      "title": "ghost-bits-cast-attack",
+      "path": "knowledge-base/ghost-bits-cast-test.md"
+    },
+    {
+      "id": "graphql-test",
+      "title": "一、原有knowledge-base",
+      "path": "knowledge-base/graphql-test.md"
+    },
+    {
+      "id": "hpp-test",
+      "title": "hpp-test（几乎不交）",
+      "path": "knowledge-base/hpp-test.md"
+    },
+    {
+      "id": "http-host-header-test",
+      "title": "http-host-header",
+      "path": "knowledge-base/http-host-header-test.md"
+    },
+    {
+      "id": "http-smuggling-test",
+      "title": "一、原有knowledge-base",
+      "path": "knowledge-base/http-smuggling-test.md"
+    },
+    {
+      "id": "http2-attacks-test",
+      "title": "http2-attacks-test（几乎不交）",
+      "path": "knowledge-base/http2-attacks-test.md"
+    },
+    {
+      "id": "idor-test",
+      "title": "一、原有knowledge-base",
+      "path": "knowledge-base/idor-test.md"
+    },
+    {
+      "id": "info-leak-test",
+      "title": "信息泄露测试手册",
+      "path": "knowledge-base/info-leak-test.md"
+    },
+    {
+      "id": "injection-test",
+      "title": "注入类漏洞测试手册（SQL注入 / 命令注入 / SSTI）",
+      "path": "knowledge-base/injection-test.md"
+    },
+    {
+      "id": "insecure-scm-test",
+      "title": "insecure-scm",
+      "path": "knowledge-base/insecure-scm-test.md"
+    },
+    {
+      "id": "jndi-injection-test",
+      "title": "jndi-injection",
+      "path": "knowledge-base/jndi-injection-test.md"
+    },
+    {
+      "id": "js-reverse-guide",
+      "title": "JS 逆向配合接口挖掘指南",
+      "path": "knowledge-base/js-reverse-guide.md"
+    },
+    {
+      "id": "llm-security-test",
+      "title": "llm-security-test（禁开越狱教材）",
+      "path": "knowledge-base/llm-security-test.md"
+    },
+    {
+      "id": "logic-test",
+      "title": "一、原有knowledge-base",
+      "path": "knowledge-base/logic-test.md"
+    },
+    {
+      "id": "oauth-jwt-test",
+      "title": "一、原有knowledge-base",
+      "path": "knowledge-base/oauth-jwt-test.md"
+    },
+    {
+      "id": "open-redirect-test",
+      "title": "open-redirect",
+      "path": "knowledge-base/open-redirect-test.md"
+    },
+    {
+      "id": "prototype-pollution-test",
+      "title": "prototype-pollution",
+      "path": "knowledge-base/prototype-pollution-test.md"
+    },
+    {
+      "id": "race-condition-test",
+      "title": "一、原有knowledge-base",
+      "path": "knowledge-base/race-condition-test.md"
+    },
+    {
+      "id": "README",
+      "title": "knowledge-base索引",
+      "path": "knowledge-base/README.md"
+    },
+    {
+      "id": "recon-methodology",
+      "title": "recon-and-methodology",
+      "path": "knowledge-base/recon-methodology.md"
+    },
+    {
+      "id": "shortlist",
+      "title": "shortlist（索引）",
+      "path": "knowledge-base/shortlist.md"
+    },
+    {
+      "id": "ssrf-test",
+      "title": "一、原有knowledge-base",
+      "path": "knowledge-base/ssrf-test.md"
+    },
+    {
+      "id": "subdomain-takeover-test",
+      "title": "subdomain-takeover",
+      "path": "knowledge-base/subdomain-takeover-test.md"
+    },
+    {
+      "id": "type-juggling-test",
+      "title": "type-juggling",
+      "path": "knowledge-base/type-juggling-test.md"
+    },
+    {
+      "id": "waf-bypass",
+      "title": "waf-bypass",
+      "path": "knowledge-base/waf-bypass.md"
+    },
+    {
+      "id": "websocket-test",
+      "title": "一、原有knowledge-base",
+      "path": "knowledge-base/websocket-test.md"
+    },
+    {
+      "id": "xslt-injection-test",
+      "title": "xslt-injection-test（几乎不交）",
+      "path": "knowledge-base/xslt-injection-test.md"
+    },
+    {
+      "id": "xss-test",
+      "title": "一、原有knowledge-base",
+      "path": "knowledge-base/xss-test.md"
+    },
+    {
+      "id": "xxe-test",
+      "title": "xxe",
+      "path": "knowledge-base/xxe-test.md"
+    }
+  ],
+  "lanes": [
+    {
+      "id": "admin-control-plane",
+      "title": "Lane · Admin Control Plane",
+      "path": "lanes/admin-control-plane.md"
+    },
+    {
+      "id": "ai-integrated-architecture-assurance",
+      "title": "Lane · AI / RAG / Agent 集成架构",
+      "path": "lanes/ai-integrated-architecture-assurance.md"
+    },
+    {
+      "id": "api-auth-assurance",
+      "title": "Lane: API And Authentication Assurance",
+      "path": "lanes/api-auth-assurance.md"
+    },
+    {
+      "id": "api-microservice-topologies",
+      "title": "Lane · API 与微服务拓扑",
+      "path": "lanes/api-microservice-topologies.md"
+    },
+    {
+      "id": "async-integration-assurance",
+      "title": "Lane · Async And Integration Assurance",
+      "path": "lanes/async-integration-assurance.md"
+    },
+    {
+      "id": "authenticated-workflow-assurance",
+      "title": "Lane · Authenticated Workflow Assurance",
+      "path": "lanes/authenticated-workflow-assurance.md"
+    },
+    {
+      "id": "cloud-native-controlplane-assurance",
+      "title": "Lane · 云原生与服务治理控制面",
+      "path": "lanes/cloud-native-controlplane-assurance.md"
+    },
+    {
+      "id": "cms-content-assurance",
+      "title": "Lane · CMS Content Assurance",
+      "path": "lanes/cms-content-assurance.md"
+    },
+    {
+      "id": "commerce-transaction-assurance",
+      "title": "Lane · Commerce Transaction Assurance",
+      "path": "lanes/commerce-transaction-assurance.md"
+    },
+    {
+      "id": "data-platform-assurance",
+      "title": "Lane · 数据平台 / 分析平台",
+      "path": "lanes/data-platform-assurance.md"
+    },
+    {
+      "id": "defi-smart-contract",
+      "title": "Lane: Smart Contract And DeFi Analysis",
+      "path": "lanes/defi-smart-contract.md"
+    },
+    {
+      "id": "edu-cas-sso",
+      "title": "Lane · CAS / SSO / Service Ticket",
+      "path": "lanes/edu-cas-sso.md"
+    },
+    {
+      "id": "education-business-assurance",
+      "title": "Lane · Education Business Assurance",
+      "path": "lanes/education-business-assurance.md"
+    },
+    {
+      "id": "file-flow",
+      "title": "Lane · File Flow",
+      "path": "lanes/file-flow.md"
+    },
+    {
+      "id": "generic-api-authz",
+      "title": "Lane · Generic API AuthZ",
+      "path": "lanes/generic-api-authz.md"
+    },
+    {
+      "id": "generic-business-logic",
+      "title": "Lane · Generic Business Logic",
+      "path": "lanes/generic-business-logic.md"
+    },
+    {
+      "id": "information-collection",
+      "title": "Information Collection Lane",
+      "path": "lanes/information-collection.md"
+    },
+    {
+      "id": "infrastructure-access-assurance",
+      "title": "Lane · 基础设施访问面 / 远程接入",
+      "path": "lanes/infrastructure-access-assurance.md"
+    },
+    {
+      "id": "machine-identity-assurance",
+      "title": "Lane · 机器身份 / API Key / AK-SK / HMAC",
+      "path": "lanes/machine-identity-assurance.md"
+    },
+    {
+      "id": "messaging-queue-assurance",
+      "title": "Lane · 消息队列与异步处理",
+      "path": "lanes/messaging-queue-assurance.md"
+    },
+    {
+      "id": "miniapp-runtime",
+      "title": "微信小程序 / Burp Proxy Runtime lane",
+      "path": "lanes/miniapp-runtime.md"
+    },
+    {
+      "id": "object-storage-assurance",
+      "title": "对象存储 / 存储桶专项 lane",
+      "path": "lanes/object-storage-assurance.md"
+    },
+    {
+      "id": "runtime-protocol-assurance",
+      "title": "Lane · Runtime Protocol Assurance",
+      "path": "lanes/runtime-protocol-assurance.md"
+    },
+    {
+      "id": "saas-multitenant-assurance",
+      "title": "Lane · SaaS Multitenant Assurance",
+      "path": "lanes/saas-multitenant-assurance.md"
+    },
+    {
+      "id": "shadow-architecture",
+      "title": "Lane: Shadow Architecture",
+      "path": "lanes/shadow-architecture.md"
+    },
+    {
+      "id": "spa-js-api-mining",
+      "title": "Lane · SPA / JS / API Mining",
+      "path": "lanes/spa-js-api-mining.md"
+    },
+    {
+      "id": "webvpn-internal-pivot",
+      "title": "Lane · WebVPN / Proxy / Internal Pivot",
+      "path": "lanes/webvpn-internal-pivot.md"
+    }
+  ],
+  "strategy": [
+    {
+      "id": "00-index",
+      "title": "skill execution-framework入口",
+      "path": "strategy/00-index.md"
+    },
+    {
+      "id": "01-attack-priority",
+      "title": "攻击路径最短原则——渗透测试版",
+      "path": "strategy/01-attack-priority.md"
+    },
+    {
+      "id": "02-bypass-toolkit",
+      "title": "通用绕过工具箱",
+      "path": "strategy/02-bypass-toolkit.md"
+    },
+    {
+      "id": "03-evidence-discipline",
+      "title": "证据纪律",
+      "path": "strategy/03-evidence-discipline.md"
+    },
+    {
+      "id": "04-control-gap-hunting",
+      "title": "控制缺口（Control Gap）狩猎",
+      "path": "strategy/04-control-gap-hunting.md"
+    },
+    {
+      "id": "05-timebox-priority",
+      "title": "渗透测试时间盒优先级——基于 22,132 案例统计的高危占比排序",
+      "path": "strategy/05-timebox-priority.md"
+    },
+    {
+      "id": "06-attack-chain-derivation",
+      "title": "攻击链自动推导引擎",
+      "path": "strategy/06-attack-chain-derivation.md"
+    },
+    {
+      "id": "10-passive-recon",
+      "title": "被动信息收集工作流",
+      "path": "strategy/10-passive-recon.md"
+    },
+    {
+      "id": "11-active-scanning",
+      "title": "主动探测工作流",
+      "path": "strategy/11-active-scanning.md"
+    },
+    {
+      "id": "12-exploit-postexp",
+      "title": "漏洞利用与后渗透工作流",
+      "path": "strategy/12-exploit-postexp.md"
+    },
+    {
+      "id": "13-cve-intelligence",
+      "title": "CVE 情报自动关联引擎",
+      "path": "strategy/13-cve-intelligence.md"
+    },
+    {
+      "id": "14-shannon-hybrid-scanning",
+      "title": "Shannon Hybrid Scanning",
+      "path": "strategy/14-shannon-hybrid-scanning.md"
+    },
+    {
+      "id": "15-active-led-execution",
+      "title": "Active-Led Execution",
+      "path": "strategy/15-active-led-execution.md"
+    },
+    {
+      "id": "16-hunter-layer",
+      "title": "Hunter Layer · 信号排序与攻击路径图",
+      "path": "strategy/16-hunter-layer.md"
+    },
+    {
+      "id": "17-hypothesis-competition",
+      "title": "Hypothesis Competition",
+      "path": "strategy/17-hypothesis-competition.md"
+    },
+    {
+      "id": "18-topology-playbooks",
+      "title": "Topology Playbooks",
+      "path": "strategy/18-topology-playbooks.md"
+    },
+    {
+      "id": "19-blind-spot-and-budget",
+      "title": "Blind Spot Detector And Exploration Budget",
+      "path": "strategy/19-blind-spot-and-budget.md"
+    },
+    {
+      "id": "20-decision-memory",
+      "title": "Decision Memory",
+      "path": "strategy/20-decision-memory.md"
+    },
+    {
+      "id": "21-intent-layer",
+      "title": "Intent Layer",
+      "path": "strategy/21-intent-layer.md"
+    },
+    {
+      "id": "22-architecture-drift-and-agent-trust",
+      "title": "Architecture Drift Detector And Agent Trust Boundary Model",
+      "path": "strategy/22-architecture-drift-and-agent-trust.md"
+    },
+    {
+      "id": "23-information-gain-and-confidence-decay",
+      "title": "Information Gain, Confidence Decay, And Budget",
+      "path": "strategy/23-information-gain-and-confidence-decay.md"
+    },
+    {
+      "id": "24-dependency-graph",
+      "title": "Dependency Graph",
+      "path": "strategy/24-dependency-graph.md"
+    },
+    {
+      "id": "25-architecture-intent-layer",
+      "title": "Architecture Intent Layer",
+      "path": "strategy/25-architecture-intent-layer.md"
+    },
+    {
+      "id": "26-attack-path-search",
+      "title": "Attack Path Search",
+      "path": "strategy/26-attack-path-search.md"
+    },
+    {
+      "id": "27-uncertainty-reduction-and-priority",
+      "title": "Uncertainty Reduction And Priority",
+      "path": "strategy/27-uncertainty-reduction-and-priority.md"
+    },
+    {
+      "id": "28-experience-replay",
+      "title": "Experience Replay",
+      "path": "strategy/28-experience-replay.md"
+    },
+    {
+      "id": "29-authority-propagation-model",
+      "title": "Authority Propagation Model",
+      "path": "strategy/29-authority-propagation-model.md"
+    },
+    {
+      "id": "30-src-target-profiling-and-asset-priority",
+      "title": "30 · SRC 目标画像与资产优先级",
+      "path": "strategy/30-src-target-profiling-and-asset-priority.md"
+    },
+    {
+      "id": "31-specialty-routing-and-account-matrix",
+      "title": "31 · SRC 专项分流与账号矩阵",
+      "path": "strategy/31-specialty-routing-and-account-matrix.md"
+    },
+    {
+      "id": "32-business-chain-patterns-and-chain-testing",
+      "title": "32 · SRC 业务链模式与链路验证",
+      "path": "strategy/32-business-chain-patterns-and-chain-testing.md"
+    },
+    {
+      "id": "33-evidence-pack-and-quality-gate",
+      "title": "33 · SRC 证据包与质量门禁",
+      "path": "strategy/33-evidence-pack-and-quality-gate.md"
+    },
+    {
+      "id": "34-submission-readiness-and-platform-policy",
+      "title": "34 · SRC 提交前审查与平台适配",
+      "path": "strategy/34-submission-readiness-and-platform-policy.md"
+    },
+    {
+      "id": "35-submission-feedback-learning",
+      "title": "35 · SRC 提交反馈学习",
+      "path": "strategy/35-submission-feedback-learning.md"
+    },
+    {
+      "id": "36-failure-decision-tree",
+      "title": "36 · SRC 失败决策树",
+      "path": "strategy/36-failure-decision-tree.md"
+    },
+    {
+      "id": "37-src-pattern-retrospective",
+      "title": "37 · SRC 模式复盘",
+      "path": "strategy/37-src-pattern-retrospective.md"
+    },
+    {
+      "id": "38-pentest-thinking-lens",
+      "title": "38 · 人类渗透思维透镜",
+      "path": "strategy/38-pentest-thinking-lens.md"
+    }
+  ],
+  "playbooks": [
+    {
+      "id": "00-index",
+      "title": "Playbooks 总目录",
+      "path": "playbooks/00-index.md"
+    },
+    {
+      "id": "00-index",
+      "title": "REST / GraphQL / WebSocket API 安全 — 决策索引",
+      "path": "playbooks/api-rest/00-index.md"
+    },
+    {
+      "id": "00-index",
+      "title": "文件上传(任意写入 / Webshell)— 决策索引",
+      "path": "playbooks/file-upload/00-index.md"
+    },
+    {
+      "id": "00-index",
+      "title": "LLM / Prompt Injection / RAG / Agent — 决策索引",
+      "path": "playbooks/llm-prompt-injection/00-index.md"
+    },
+    {
+      "id": "00-index",
+      "title": "业务逻辑 / 越权 / 验证码 / 支付 / CSRF / 点击劫持 — 决策索引",
+      "path": "playbooks/logic-flaws/00-index.md"
+    },
+    {
+      "id": "00-index",
+      "title": "OAuth / OIDC / SAML / JWT — 决策索引",
+      "path": "playbooks/oauth-saml-jwt/00-index.md"
+    },
+    {
+      "id": "00-index",
+      "title": "路径遍历 / LFI / RFI — 决策索引",
+      "path": "playbooks/path-traversal/00-index.md"
+    },
+    {
+      "id": "00-index",
+      "title": "远程代码执行 (RCE) — 决策索引",
+      "path": "playbooks/rce/00-index.md"
+    },
+    {
+      "id": "00-index",
+      "title": "SSRF / Host Header / 缓存投毒 — 决策索引",
+      "path": "playbooks/ssrf-cache-host/00-index.md"
+    },
+    {
+      "id": "00-index",
+      "title": "XSS — 决策索引",
+      "path": "playbooks/xss/00-index.md"
+    },
+    {
+      "id": "10-csrf",
+      "title": "CSRF 跨站请求伪造 payload 库",
+      "path": "playbooks/logic-flaws/10-csrf.md"
+    },
+    {
+      "id": "10-direct-prompt",
+      "title": "直接 Prompt Injection payload 库",
+      "path": "playbooks/llm-prompt-injection/10-direct-prompt.md"
+    },
+    {
+      "id": "10-framework",
+      "title": "RCE — 框架 / 中间件漏洞 payload 库",
+      "path": "playbooks/rce/10-framework.md"
+    },
+    {
+      "id": "10-oauth-redirect",
+      "title": "OAuth / 开放重定向 payload 库",
+      "path": "playbooks/oauth-saml-jwt/10-oauth-redirect.md"
+    },
+    {
+      "id": "10-rest-api",
+      "title": "REST API 核心攻击 payload 库",
+      "path": "playbooks/api-rest/10-rest-api.md"
+    },
+    {
+      "id": "10-ssrf-core",
+      "title": "SSRF — 核心 payload 库",
+      "path": "playbooks/ssrf-cache-host/10-ssrf-core.md"
+    },
+    {
+      "id": "10-traversal-lfi",
+      "title": "LFI 基础 / 目录遍历技术 payload 库",
+      "path": "playbooks/path-traversal/10-traversal-lfi.md"
+    },
+    {
+      "id": "10-upload-bypass",
+      "title": "上传绕过 payload 库",
+      "path": "playbooks/file-upload/10-upload-bypass.md"
+    },
+    {
+      "id": "10-xss-by-type",
+      "title": "XSS 三大类型 payload 库",
+      "path": "playbooks/xss/10-xss-by-type.md"
+    },
+    {
+      "id": "11-archive-traversal",
+      "title": "解压 / 路径遍历 payload 库",
+      "path": "playbooks/file-upload/11-archive-traversal.md"
+    },
+    {
+      "id": "11-business-logic",
+      "title": "业务逻辑漏洞 payload 库",
+      "path": "playbooks/logic-flaws/11-business-logic.md"
+    },
+    {
+      "id": "11-cloud",
+      "title": "云元数据 / IAM / K8s / S3 payload 库",
+      "path": "playbooks/ssrf-cache-host/11-cloud.md"
+    },
+    {
+      "id": "11-command-injection",
+      "title": "RCE — 命令注入 / 通用代码执行 payload 库",
+      "path": "playbooks/rce/11-command-injection.md"
+    },
+    {
+      "id": "11-graphql",
+      "title": "GraphQL payload 库(API 视角)",
+      "path": "playbooks/api-rest/11-graphql.md"
+    },
+    {
+      "id": "11-indirect-rag",
+      "title": "间接 Prompt Injection / RAG 投毒 payload 库",
+      "path": "playbooks/llm-prompt-injection/11-indirect-rag.md"
+    },
+    {
+      "id": "11-saml",
+      "title": "SAML payload 库",
+      "path": "playbooks/oauth-saml-jwt/11-saml.md"
+    },
+    {
+      "id": "12-agent-vulns",
+      "title": "Agent 应用渗透 — 10 类漏洞速查 + OWASP ASI + CoT注入 + 跨域攻击链 + AI基础设施",
+      "path": "playbooks/llm-prompt-injection/12-agent-vulns.md"
+    },
+    {
+      "id": "12-cache",
+      "title": "缓存投毒 / 缓存欺骗 / CDN 绕过 payload 库",
+      "path": "playbooks/ssrf-cache-host/12-cache.md"
+    },
+    {
+      "id": "12-clickjacking",
+      "title": "点击劫持 payload 库",
+      "path": "playbooks/logic-flaws/12-clickjacking.md"
+    },
+    {
+      "id": "12-deserialization",
+      "title": "RCE — 通用反序列化 payload 库",
+      "path": "playbooks/rce/12-deserialization.md"
+    },
+    {
+      "id": "12-exploitation",
+      "title": "XSS 利用 payload 库",
+      "path": "playbooks/xss/12-exploitation.md"
+    },
+    {
+      "id": "12-jwt",
+      "title": "JWT payload 库",
+      "path": "playbooks/oauth-saml-jwt/12-jwt.md"
+    },
+    {
+      "id": "12-jwt-api",
+      "title": "JWT 安全(API 视角补充)payload 库",
+      "path": "playbooks/api-rest/12-jwt-api.md"
+    },
+    {
+      "id": "12-php-wrappers",
+      "title": "PHP 伪协议链(Filter / Input / Data / Zip / Wrapper)payload 库",
+      "path": "playbooks/path-traversal/12-php-wrappers.md"
+    },
+    {
+      "id": "12-race-download",
+      "title": "竞态 / 任意下载 payload 库",
+      "path": "playbooks/file-upload/12-race-download.md"
+    },
+    {
+      "id": "13-auth-misc",
+      "title": "通用认证 / 会话 / 密码重置 / 2FA payload 库",
+      "path": "playbooks/oauth-saml-jwt/13-auth-misc.md"
+    },
+    {
+      "id": "13-file-rce-chain",
+      "title": "RCE — 文件链 / 上传 / 包含 payload 库",
+      "path": "playbooks/rce/13-file-rce-chain.md"
+    },
+    {
+      "id": "13-model-attacks",
+      "title": "模型窃取 / 对抗样本 payload 库",
+      "path": "playbooks/llm-prompt-injection/13-model-attacks.md"
+    },
+    {
+      "id": "13-phar-session-proc",
+      "title": "Phar / Session / Proc 高级 LFI payload 库",
+      "path": "playbooks/path-traversal/13-phar-session-proc.md"
+    },
+    {
+      "id": "13-websocket",
+      "title": "WebSocket 安全 payload 库",
+      "path": "playbooks/api-rest/13-websocket.md"
+    },
+    {
+      "id": "14-ssti",
+      "title": "RCE — SSTI 模板注入 payload 库",
+      "path": "playbooks/rce/14-ssti.md"
+    },
+    {
+      "id": "14-techniques",
+      "title": "Prompt 注入技巧速查(100+ 技法分类) + 防御对照",
+      "path": "playbooks/llm-prompt-injection/14-techniques.md"
+    },
+    {
+      "id": "15-xxe",
+      "title": "RCE — XXE 实体注入 payload 库",
+      "path": "playbooks/rce/15-xxe.md"
+    },
+    {
+      "id": "16-supply-chain",
+      "title": "PR Check",
+      "path": "playbooks/rce/16-supply-chain.md"
+    },
+    {
+      "id": "17-prototype-pollution",
+      "title": "RCE — 原型链污染 payload 库",
+      "path": "playbooks/rce/17-prototype-pollution.md"
+    },
+    {
+      "id": "arbitrary-x-authz",
+      "title": "任意 X 子授权——比 IDOR 更狠的\"权限维度\"漏洞",
+      "path": "playbooks/arbitrary-x-authz.md"
+    },
+    {
+      "id": "graphql",
+      "title": "GraphQL",
+      "path": "playbooks/graphql.md"
+    },
+    {
+      "id": "http-smuggling",
+      "title": "HTTP Request Smuggling / HTTP/2 Desync",
+      "path": "playbooks/http-smuggling.md"
+    },
+    {
+      "id": "info-disclosure",
+      "title": "信息泄露 / 敏感文件 / 备份",
+      "path": "playbooks/info-disclosure.md"
+    },
+    {
+      "id": "mobile",
+      "title": "移动端（Android / iOS）安全",
+      "path": "playbooks/mobile.md"
+    },
+    {
+      "id": "race-conditions",
+      "title": "竞态条件 (Race Conditions)",
+      "path": "playbooks/race-conditions.md"
+    },
+    {
+      "id": "sqli",
+      "title": "SQL 注入",
+      "path": "playbooks/sqli.md"
+    },
+    {
+      "id": "unauth-access",
+      "title": "未授权访问 / 默认凭据",
+      "path": "playbooks/unauth-access.md"
+    }
+  ],
+  "specialized": [
+    {
+      "id": "accepted-report-templates",
+      "title": "过审报告模板（从语料实证提炼）",
+      "path": "specialized/src-report-paradigm/references/accepted-report-templates.md"
+    },
+    {
+      "id": "anti-idle-gates",
+      "title": "反空转与深挖优先闸（dig-scope §2 提炼）",
+      "path": "specialized/src-hunt-lane/references/anti-idle-gates.md"
+    },
+    {
+      "id": "collection-workflow",
+      "title": "SnowEyes Collection Workflow",
+      "path": "specialized/snoweyes-collector/references/collection-workflow.md"
+    },
+    {
+      "id": "logic-flaw-patterns",
+      "title": "业务逻辑缺陷模式速查",
+      "path": "specialized/business-logic-attack/references/logic-flaw-patterns.md"
+    },
+    {
+      "id": "README",
+      "title": "SnowEyes Browser Collector",
+      "path": "specialized/snoweyes-collector/extension/README.md"
+    },
+    {
+      "id": "README",
+      "title": "SnowEyes Collector Skill",
+      "path": "specialized/snoweyes-collector/README.md"
+    },
+    {
+      "id": "SCENARIOS",
+      "title": "SQL Injection — Extended Scenarios & Real-World Cases",
+      "path": "specialized/sqli-sql-injection/SCENARIOS.md"
+    },
+    {
+      "id": "scope-seed-loop",
+      "title": "范围与种子循环（dig-scope §0-§1 提炼）",
+      "path": "specialized/src-hunt-lane/references/scope-seed-loop.md"
+    },
+    {
+      "id": "site-entry-playbook",
+      "title": "进站打法（dig-scope §4 提炼）",
+      "path": "specialized/src-hunt-lane/references/site-entry-playbook.md"
+    },
+    {
+      "id": "SKILL",
+      "title": "api-security",
+      "path": "specialized/api-security/SKILL.md"
+    },
+    {
+      "id": "SKILL",
+      "title": "business-logic-attack",
+      "path": "specialized/business-logic-attack/SKILL.md"
+    },
+    {
+      "id": "SKILL",
+      "title": "snoweyes-collector",
+      "path": "specialized/snoweyes-collector/SKILL.md"
+    },
+    {
+      "id": "SKILL",
+      "title": "sqli-sql-injection",
+      "path": "specialized/sqli-sql-injection/SKILL.md"
+    },
+    {
+      "id": "SKILL",
+      "title": "src-hunt-lane",
+      "path": "specialized/src-hunt-lane/SKILL.md"
+    },
+    {
+      "id": "SKILL",
+      "title": "src-report-paradigm",
+      "path": "specialized/src-report-paradigm/SKILL.md"
+    },
+    {
+      "id": "SKILL",
+      "title": "target-profiling",
+      "path": "specialized/target-profiling/SKILL.md"
+    },
+    {
+      "id": "value-matrix",
+      "title": "价值导向与类型矩阵（src-value-hunting 提炼）",
+      "path": "specialized/src-hunt-lane/references/value-matrix.md"
+    },
+    {
+      "id": "whitebox-0day-phases",
+      "title": "白盒 0day 审计流程（researcher-blackbox-whitebox 提炼）",
+      "path": "specialized/src-hunt-lane/references/whitebox-0day-phases.md"
+    }
+  ],
+  "templates": {
+    "report": "# 安全测试报告\n\n## 标题\n\n## 摘要\n\n## 范围与归属\n\n- 授权来源：\n- 目标资产：\n- 测试账号/角色：\n\n## 前置条件\n\n## 正常基线\n\n## 变异步骤\n\n## 关键请求与响应差异\n\n## 最终业务状态\n\n## 实际影响\n\n## 根因分析\n\n## 修复建议\n\n## 回归验证\n\n## 证据与脱敏说明\n\n",
+    "reportDocx": "templates/report-blank.docx",
+    "testMatrix": "version: 1\naccounts:\n  - id: A\n    role: normal\n    tenant: T1\n  - id: B\n    role: normal\n    tenant: T1\nobjects: []\ntests:\n  - id: TEST-001\n    endpoint: \"\"\n    method: GET\n    baseline_ref: \"\"\n    actor: A\n    target_object: \"\"\n    changed_variable: \"\"\n    expected: \"\"\n    observed: \"\"\n    final_state: \"\"\n    conclusion: candidate\n    evidence_refs: []\n\n",
+    "assetQueue": "version: 1\ntarget:\n  id: TARGET-001\n  name: \"\"\n  authorization_source: \"\"\n  scope_confirmed: false\nassets:\n  - id: ASSET-001\n    identifier: \"\"\n    type: web\n    ownership_evidence: []\n    business_role: \"\"\n    signals: []\n    priority_reason: \"\"\n    state: new\n    next_action: \"\"\n\n"
+  }
+}

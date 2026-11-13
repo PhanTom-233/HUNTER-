@@ -1,0 +1,12 @@
+# 统一换行，避免 Windows 上出现"什么都没改却显示全文件被修改"
+* text=auto eol=lf
+
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.zip binary
+
+# Windows 批处理必须是 CRLF
+*.bat text eol=crlf

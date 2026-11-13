@@ -1,0 +1,49 @@
+{
+  "manifest_version": 3,
+  "name": "SnowEyes Collector",
+  "version": "2.0.0",
+  "description": "Scoped browser-side asset and page-content collector.",
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "storage",
+    "webRequest",
+    "cookies",
+    "tabs",
+    "webNavigation"
+  ],
+  "host_permissions": [
+    "*://*/*"
+  ],
+  "background": {
+    "service_worker": "background/background.js",
+    "type": "module"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "content/content.js"
+      ],
+      "run_at": "document_end",
+      "all_frames": true
+    }
+  ],
+  "action": {
+    "default_popup": "popup/popup.html",
+    "default_badge_text": "0",
+    "default_badge_background_color": "#666666"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "vue-route-hook.js"
+      ],
+      "matches": [
+        "*://*/*"
+      ]
+    }
+  ]
+}
