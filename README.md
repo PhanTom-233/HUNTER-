@@ -283,7 +283,7 @@ N-A 的记录必须带 `naReason`，枚举值以 `/api/ai-schema` 为准。写�
 只需要 **Node.js 18+**（去 <https://nodejs.org> 下 LTS 版，一路下一步就行）。
 
 1. 把 zip **完整解压**，不要只拖单个文件出来。
-2. 双击 `start-hunter.bat`。
+2. 双击 `start-hunter.bat`。有Node后直接点这个脚本即可启动!
 3. 浏览器会自动打开 `http://localhost:3001`。
 4. 用完直接关掉黑窗口，数据会在关窗时落盘。
 
