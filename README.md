@@ -27,7 +27,8 @@
 - **它不做什么**：不扫描、不发包、不爆破、不联网、不管 AI 的会话和工具权限。
 
 ---
-<img width="1779" height="894" alt="image" src="https://github.com/user-attachments/assets/acadc76e-3e65-4a8f-a6d4-76c4be9b0d29" />
+<img width="1900" height="911" alt="image" src="https://github.com/user-attachments/assets/e0819fdc-b313-406d-9e7f-2c78d9d1e76f" />
+
 
 
 ## 先说一个熟悉的场面
