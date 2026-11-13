@@ -193,19 +193,13 @@ HUNTER 不抢 AI 的活。它负责让 AI 的活留下痕迹。
 - 横向关系必须手动画，只有 7 种：同 /24、同 C 段、同证书、同 favicon、同模板、互调、引用(JS→密钥)。
 - 程序不猜“这两个站是不是同一套系统”。这种判断得你自己做。
 - 支持路径高亮、过滤、从资产库/接口清单点“在图谱中查看”直接定位。
+<img width="1565" height="831" alt="image" src="https://github.com/user-attachments/assets/c8939873-3338-4dd8-891c-ff846ed1fee9" />
 
 
 #### 建议中心
 
 <img width="1803" height="894" alt="image" src="https://github.com/user-attachments/assets/9d696c90-3292-4db8-81a2-3461b9c32fe0" />
 
-
-#### 漏洞报告
-
-- 创建：复制内置的 2.3 空白 docx（13 个小节骨架）到 `reports/`。
-- 打开：后端调系统默认程序（Word / WPS）。
-- 删除：默认只移除登记，保留 docx；勾选“同时删除文件”才真删，并且二次确认。
-- 项目 JSON 里只存文件名，不存正文、不存绝对路径。
 
 #### AI 读这里
 
@@ -214,6 +208,8 @@ HUNTER 不抢 AI 的活。它负责让 AI 的活留下痕迹。
   - `GET /api/projects/<projectId>`：当前项目的全量数据。
 - 页面只是把这些结构摊开给人看；AI 直接请求端点更省 token。
 - 有了这个，AI 不用猜字段名，也不用你复制粘贴一堆 JSON。
+  <img width="1598" height="777" alt="image" src="https://github.com/user-attachments/assets/4d79b14b-66f8-4244-b63c-144d21ea9c91" />
+
 
 #### 设置
 
